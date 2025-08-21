@@ -19,6 +19,9 @@ class Employee(db.Model):
     name = db.Column(db.String)
     hire_date = db.Column(db.Date)
 
+    # Relationship mapping the employee to related reviews
+    reviews = db.relationship('Review')
+
     def __repr__(self):
         return f"<Employee {self.id}, {self.name}, {self.hire_date}>"
 
